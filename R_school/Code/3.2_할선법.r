@@ -1,3 +1,9 @@
+#작성자 : 나은이
+#작성일자 : 20211015
+#프로그램 목적 : 빅데이터분석실무 실습
+#내용 : 할선법
+
+
 secant = function(f, init, tol = 1e-9, max = 100){
   i = 0
   oldx = init
@@ -18,3 +24,12 @@ secant = function(f, init, tol = 1e-9, max = 100){
   }
   return(x)
 }
+
+
+
+f = function(x) exp(-x)-x # 함수 정의
+df = D(fx,'x') # 도함수 구해주는 함수 x에 대해 미분한다고
+df = function(x) -(exp(-x)+1)
+secant(f,0)
+
+#solution is 0.5671433

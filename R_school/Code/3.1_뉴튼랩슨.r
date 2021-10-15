@@ -1,3 +1,8 @@
+#작성자 : 나은이
+#작성일자 : 20211015
+#프로그램 목적 : 빅데이터분석실무 실습
+#내용 : 뉴튼랩슨
+
 newton_raphson = function(f, fp, init, tol = 1e-9, max = 100){ #tol은 0에 가깝지만 0은 아닌 값 #100번 돌리겠다
   iter = 0 #iteration 시작
   oldx = init #x0를 의미(뉴턴 랩슨의 초기값)
@@ -13,7 +18,15 @@ newton_raphson = function(f, fp, init, tol = 1e-9, max = 100){ #tol은 0에 가�
     
     oldx = x # x업데이트
     x = x-f(x)/fp(x) # 뉴턴랩슨 구현
+    cat("iteration",iter,"value of x is :",x,"\n")
   }
   
   return(paste("solution is ",x))
 }
+
+f = function(x) exp(-x)-x # 함수 정의
+df = D(fx,'x') # 도함수 구해주는 함수 x에 대해 미분한다고
+df = function(x) -(exp(-x)+1)
+newton_raphson(f,df,0)
+
+#solution is 0.567143190409784
