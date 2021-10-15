@@ -10,7 +10,7 @@ secant = function(f, init, tol = 1e-9, max = 100){
     
     if(i>max) stop("there is no solution")
     fx = f(x) # y를 업데이트
-    newx = x-f(x)*((x-oldx)/fx-oldfx)) #★ secant, 할선의 방정식(y=0을 지나는 x를 찾음)
+    newx = x-f(x)*((x-oldx)/(fx-oldfx)) #★ secant, 할선의 방정식(y=0을 지나는 x를 찾음)
     oldx = x # 기존 oldx는 x로 업데이트
     oldfx = fx # x는 newx로 업데이트
     x = newx
